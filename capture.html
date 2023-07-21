@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebAR Camera</title>
+</head>
+<body>
+    <video id="cameraStream" width="640" height="480" autoplay></video>
+    <button onclick="capture()">Capture</button>
+    <canvas id="canvas" style="display: none;"></canvas>
+
+    <script>
+        async function setupCamera() {
+            const constraints = {
+                video: { width: 640, height: 480 }
+            };
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                const videoElement = document.getElementById('cameraStream');
+                videoElement.srcObject = stream;
+            } catch (error) {
+                console.error('Error accessing the camera:', error);
+            }
+        }
+
+        function capture() {
+            const videoElement = document.getElementById('cameraStream');
+            const canvas = document.getElementById('canvas');
+            const context = canvas.getContext('2d');
+			
+			console.log('onclick capture');
+
+            // 確保影像已經載入
+            videoElement.addEventListener('loadedmetadata', () => {
+				console.log('loadedmetadata...');
+                // 設定 canvas 大小與影像一致
+                canvas.width = videoElement.videoWidth;
+                canvas.height = videoElement.videoHeight;
+				
+				console.log('videoElement.videoWidth = ', videoElement.videoWidth);
+				console.log('videoElement.videoHeight = ', videoElement.videoHeight);
+				
+                // 將影像繪製到 canvas 上
+                context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+                // 取得 canvas 圖片資料
+                const imageDataURL = canvas.toDataURL('image/jpeg');
+
+                // 假設您可以將圖片資料傳送到伺服器或做其他處理
+                // 例如使用 XMLHttpRequest 或 fetch API 傳送至伺服器
+
+                // 在此範例中，我們將圖片資料顯示在一個新的視窗中
+                const newWindow = window.open();
+				console.log('after open new window');
+                newWindow.document.write('<img src="' + imageDataURL + '" />');
+            });
+        }
+
+        // 當網頁載入時，啟動攝像頭
+        window.addEventListener('load', setupCamera);
+    </script>
+</body>
+</html>
