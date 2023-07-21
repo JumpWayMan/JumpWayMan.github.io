@@ -11,6 +11,10 @@ app.get('/capture', function (req, res) {
   res.redirect('capture.html');
 });
 
+app.get('/unity_webgl', function (req, res) {
+  res.redirect('unity_webgl.html');
+});
+
 // 監聽 port
 
 const port = process.env.port || 3000;
