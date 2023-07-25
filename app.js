@@ -15,6 +15,18 @@ app.get('/unity_webgl', function (req, res) {
   res.redirect('unity_webgl.html');
 });
 
+app.get('/unity_webgl_arProject', function (req, res) {
+  res.redirect('unity_webgl_arProject.html');
+});
+
+app.get('/arjs_image', function (req, res) {
+  res.redirect('arjs_image.html');
+});
+
+app.get('/arjs_location', function (req, res) {
+  res.redirect('arjs_location.html');
+});
+
 // 監聽 port
 
 const port = process.env.port || 3000;
