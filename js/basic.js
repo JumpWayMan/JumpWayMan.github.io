@@ -2,6 +2,7 @@ window.onload = () => {
 	console.log("------------------------1");
     let testEntityAdded = false;		
     const el = document.querySelector("[gps-new-camera]");
+	console.log("gps-new-camera =", el);
 		setTimeout(function () {
 			console.log("testEntityAdded =", testEntityAdded);
       }, 3000);
