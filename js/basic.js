@@ -1,8 +1,11 @@
 window.onload = () => {
 	console.log("------------------------1");
-    let testEntityAdded = false;
-
+    let testEntityAdded = false;		
     const el = document.querySelector("[gps-new-camera]");
+		setTimeout(function () {
+			console.log("testEntityAdded =", testEntityAdded);
+      }, 1000);
+    }
 
     el.addEventListener("gps-camera-update-position", e => {
 			console.log("------------------------2");
