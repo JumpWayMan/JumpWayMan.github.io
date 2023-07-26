@@ -5,7 +5,7 @@ window.onload = () => {
 	console.log("gps-new-camera =", el);
 		setTimeout(function () {
 			console.log("testEntityAdded =", testEntityAdded);
-      }, 3000);
+      }, 1000);
 
     el.addEventListener("gps-camera-update-position", e => {
 			console.log("------------------------2");
