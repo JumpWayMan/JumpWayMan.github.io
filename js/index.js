@@ -1,13 +1,13 @@
 window.onload = () => {
 	console.log("------------------------1");
     let testEntityAdded = false;		
-    const el = document.querySelector("[gps-new-camera]");
-	console.log("gps-new-camera =", el);
+    const el = document.querySelector("[gps-camera]");
+	console.log("gps-camera =", el);
 		setTimeout(function () {
 			console.log("testEntityAdded =", testEntityAdded);
       }, 1000);
 
-    el.addEventListener("gps-new-camera-update-position", e => {
+    el.addEventListener("gps-camera-update-position", e => {
 			console.log("------------------------2");
         if(!testEntityAdded) {
             alert(`Got first GPS position: lon ${e.detail.position.longitude} lat ${e.detail.position.latitude}`);
