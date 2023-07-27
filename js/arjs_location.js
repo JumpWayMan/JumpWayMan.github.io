@@ -1,5 +1,5 @@
 window.onload = () => {
-	console.log("------------------------1");
+	console.log("------------------------30");
     let testEntityAdded = false;		
     const el = document.querySelector("[gps-new-camera]");
 	console.log("gps-new-camera =", el);
