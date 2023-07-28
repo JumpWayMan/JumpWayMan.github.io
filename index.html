@@ -37,6 +37,22 @@
     const button3 = document.getElementById('button3');
     const button4 = document.getElementById('button4');
 
+    // 建立一個函數，用於計算四個按鈕中最寬的按鈕寬度
+    function setEqualButtonWidth() {
+      const maxWidth = Math.max(
+        button1.offsetWidth,
+        button2.offsetWidth,
+        button3.offsetWidth,
+        button4.offsetWidth
+      );
+
+      // 將所有按鈕的寬度設置為最大寬度
+      button1.style.width = `${maxWidth}px`;
+      button2.style.width = `${maxWidth}px`;
+      button3.style.width = `${maxWidth}px`;
+      button4.style.width = `${maxWidth}px`;
+    }
+
     // 按鈕1的點擊事件處理器
     button1.addEventListener('click', function() {
       window.location.href = 'https://jumpwayman.github.io/lvLab_Box'; // 替換為第一個頁面的URL
