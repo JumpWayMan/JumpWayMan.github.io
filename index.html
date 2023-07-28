@@ -53,6 +53,9 @@
       button4.style.width = `${maxWidth}px`;
     }
 
+    // 窗口加載後計算按鈕寬度
+    window.addEventListener('load', setEqualButtonWidth);
+
     // 按鈕1的點擊事件處理器
     button1.addEventListener('click', function() {
       window.location.href = 'https://jumpwayman.github.io/lvLab_Box'; // 替換為第一個頁面的URL
