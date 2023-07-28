@@ -7,6 +7,23 @@ app.get('/', function (req, res) {
   res.redirect('index.html');
 });
 
+app.get('/lvLab_Box', function (req, res) {
+  res.redirect('lvLab_Box.html');
+});
+
+app.get('/lvLab_kriel', function (req, res) {
+  res.redirect('lvLab_kriel.html');
+});
+
+app.get('/simu', function (req, res) {
+  res.redirect('simu.html');
+});
+
+app.get('/test', function (req, res) {
+  res.redirect('test.html');
+});
+
+
 app.get('/capture', function (req, res) {
   res.redirect('capture.html');
 });
@@ -21,10 +38,6 @@ app.get('/unity_webgl_arProject', function (req, res) {
 
 app.get('/arjs_image', function (req, res) {
   res.redirect('arjs_image.html');
-});
-
-app.get('/arjs_location', function (req, res) {
-  res.redirect('arjs_location.html');
 });
 
 // 監聽 port
